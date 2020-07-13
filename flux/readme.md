@@ -25,12 +25,11 @@ kubectl get nodes
 kubectl create ns flux
 
 $GHUSER = "JoshDanielWalker"
-fluxctl install `
---git-user=${GHUSER} `
---git-email=${GHUSER}@users.noreply.github.com `
---git-url=git@github.com:${GHUSER}/docker-development-youtube-series `
---git-path=kubernetes/configmaps,kubernetes/secrets,kubernetes/deployments `
---git-branch=flux-test `
+fluxctl install \
+--git-user=${GHUSER} \
+--git-email=${GHUSER}@users.noreply.github.com \
+--git-url=git@github.com:${GHUSER}/flux-get-started \
+--git-path=namespaces,workloads \
 --namespace=flux | kubectl apply -f -
 
 kubectl -n flux rollout status deployment/flux
