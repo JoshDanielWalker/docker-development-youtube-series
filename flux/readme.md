@@ -24,7 +24,7 @@ kubectl get nodes
 ```
 kubectl create ns flux
 
-$GHUSER = "marcel-dempers"
+$GHUSER = "JoshDanielWalker"
 fluxctl install `
 --git-user=${GHUSER} `
 --git-email=${GHUSER}@users.noreply.github.com `
@@ -40,7 +40,7 @@ fluxctl list-workloads
 fluxctl identity
 
 
-https://github.com/marcel-dempers/docker-development-youtube-series/settings/keys/new
+https://github.com/JoshDanielWalker/docker-development-youtube-series/settings/keys/new
 
 fluxctl sync
 
