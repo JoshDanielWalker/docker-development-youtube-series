@@ -7,8 +7,8 @@ metadata:
     app: example-app
     test: test
   annotations:
-    fluxcd.io/tag.example-app: semver:~1.0
-    fluxcd.io/automated: 'true'
+   fluxcd.io/tag.podinfod: semver:3.2.*
+   fluxcd.io/automated: 'true'
 spec:
   selector:
     matchLabels:
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: fluxcd.io/tag.podinfod        
+        image: stefanprodan/podinfo:3.2.1      
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
