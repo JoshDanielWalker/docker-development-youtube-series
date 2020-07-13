@@ -24,20 +24,15 @@ kubectl get nodes
 ```
 kubectl create ns flux
 
-$GHUSER = "JoshDanielWalker"
+export GHUSER=JoshDanielWalker
 fluxctl install \
 --git-user=${GHUSER} \
 --git-email=${GHUSER}@users.noreply.github.com \
---git-url=git@github.com:${GHUSER}/flux-get-started \
---git-path=namespaces,workloads \
+--git-url=git@github.com:${GHUSER}/docker-development-youtube-series \
+--git-path=kubernetes/configmaps,kubernetes/secrets,kubernetes/deployments \
 --namespace=flux | kubectl apply -f -
 
 kubectl -n flux rollout status deployment/flux
-
-$env:FLUX_FORWARD_NAMESPACE = "flux"
-fluxctl list-workloads
-fluxctl identity
-
 
 https://github.com/JoshDanielWalker/docker-development-youtube-series/settings/keys/new
 
