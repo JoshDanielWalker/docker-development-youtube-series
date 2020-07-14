@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: bitnami/node-example
+        image: joshdwalker/umbriel
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
